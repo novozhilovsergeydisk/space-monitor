@@ -1,0 +1,15 @@
+[Unit]
+Description=Space Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/space-monitor
+Restart=always
+User=root
+Environment=TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+Environment=EMAIL_FROM=your_email@example.com
+Environment=EMAIL_PASSWORD=your_email_password
+Environment=EMAIL_TO=recipient@example.com
+
+[Install]
+WantedBy=multi-user.target
